@@ -1,4 +1,4 @@
---Readme document for *YOUR NAME*, *YOUR_EMAIL@uci.edu*--
+--Readme document for Emily Yang, emilyy12@uci.edu and Sherry Tram, smtram@uci.edu--
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
@@ -21,7 +21,7 @@
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
 
-
+We did not consult others for this assignment. We discussed how we wanted to complete the work and which bugs we noticed while programming together.
 
 5. Did you add a bonus feature to your submission? If so, what is it and how should we see it?
 
@@ -29,3 +29,4 @@
 
 6. Is there anything special we need to know in order to run your code?
 
+This may or may not be relevant to how the code is run, but we put the dummy_webserver/ in the .gitignore
