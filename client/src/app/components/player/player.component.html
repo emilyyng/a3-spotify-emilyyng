@@ -1,0 +1,22 @@
+<div class="my-3">
+  <p>Player status: {{ status }}</p>
+  <button class="btn btn-light me-2" (click)="playTrack()" [disabled]="!deviceId || !trackUri">Play</button>
+  <button class="btn btn-light" (click)="togglePlay()" [disabled]="!deviceId">{{ paused ? 'Resume' : 'Pause' }}</button>
+  @if (currentTrack) {
+    <div class="card mt-2" style="max-width: 300px;">
+    @if (currentImage) {
+      <img [src]="currentImage" class="card-img-top" alt="Album art">
+    }
+    <div class="card-body">
+      <h5 class="card-title">{{ currentTrack }}</h5>
+      <p class="card-text">{{ currentArtist }}</p>
+
+      <div class="progress" style="height: 8px;">
+        <div class="progress-bar bg-success" role="progressbar"
+            [style.width.%]="duration ? (position / duration) * 100 : 0"></div>
+        </div>
+        <small>{{ formatTime(position) }} / {{ formatTime(duration) }}</small>
+    </div>
+  </div>
+  }
+</div>

@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   searchCategory:string = 'artist';
   searchCategories:string[] = ['artist', 'album', 'track'];
   resources:ResourceData[];
+  resultCategory:string;
 
   constructor(private spotifyService:SpotifyService) { }
 
@@ -24,7 +25,21 @@ export class SearchComponent implements OnInit {
   }
 
   search() {
-    //TODO: call search function in spotifyService and parse response
+    //call search function in spotifyService and parse response
+    const category = this.searchCategory;
+    this.resources = undefined as any;
+    this.spotifyService.searchFor(this.searchCategory, this.searchString).then((data) => {
+      // console.log(data);
+      this.resources = data;
+      this.resultCategory = category;
+    })
   }
+
+  onCategoryChange(category:string) {
+  this.searchCategory = category;
+  if (this.searchString) {
+    this.search();
+  }
+}
 
 }
