@@ -30,6 +30,7 @@
 		<div class="col-sm-6 col-12">
 			<!--TODO: create a thermometer component with the track's popularity-->
 			<app-thermometer [popularity]="track.popularity"></app-thermometer>
+			<app-player [trackUri]="'spotify:track:' + track.id"></app-player>
 		</div>
 	}
 </div>

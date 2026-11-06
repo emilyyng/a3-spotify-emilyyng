@@ -95,4 +95,10 @@ export class SpotifyService {
       return new TrackData(data);
     });
   }
+
+  getToken():Promise<string> {
+  return this.sendRequestToExpress('/token').then((data) => {
+    return data.access_token;
+  });
+}
 }

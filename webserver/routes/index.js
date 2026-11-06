@@ -96,7 +96,7 @@ router.get('*', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-	var scopes = 'user-read-private user-read-email';
+	var scopes = 'user-read-private user-read-email streaming user-modify-playback-state user-read-playback-state';
 	res.redirect('https://accounts.spotify.com/authorize' +
 	  '?response_type=code' +
 	  '&client_id=' + my_client_id +
@@ -180,6 +180,10 @@ router.get('/album-tracks/:id', function(req, res, next) {
 router.get('/track/:id', function(req, res, next) {
 	var id = req.params.id;
 	makeAPIRequest('https://api.spotify.com/v1/tracks/' + id, res);
+});
+
+router.get('/token', function(req, res, next) {
+	res.json({ access_token: access_token });
 });
 
 module.exports = router;
